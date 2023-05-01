@@ -1,0 +1,26 @@
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@xstate/vue": "^2.0.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3",
+    "firebase": "^9.16.0",
+    "gsap": "^3.11.4",
+    "vue": "^3.2.45",
+    "vue-advanced-cropper": "^2.8.8",
+    "vue-router": "^4.1.6",
+    "vue-select": "^4.0.0-beta.6",
+    "xstate": "^4.35.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0"
+  }
+}

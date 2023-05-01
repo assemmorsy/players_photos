@@ -1,0 +1,831 @@
+{
+    "id": "PEhvdGplwlF2Taa3m7Nz",
+    "records": [
+        {
+            "data": {
+                "team2": {
+                    "scores": [],
+                    "name": "صن و حكم"
+                },
+                "winner": null,
+                "team1": {
+                    "scores": [],
+                    "name": "طويق"
+                }
+            },
+            "event": "start",
+            "startAt": 0
+        },
+        {
+            "startAt": 103001,
+            "event": "score increased",
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        12
+                    ]
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        6
+                    ]
+                },
+                "winner": null
+            }
+        },
+        {
+            "startAt": 219005,
+            "event": "score increased",
+            "data": {
+                "team1": {
+                    "scores": [
+                        6,
+                        26
+                    ],
+                    "name": "طويق"
+                },
+                "winner": null,
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        12,
+                        0
+                    ]
+                }
+            }
+        },
+        {
+            "event": "score increased",
+            "startAt": 299541,
+            "data": {
+                "winner": null,
+                "team1": {
+                    "scores": [
+                        6,
+                        26,
+                        48
+                    ],
+                    "name": "طويق"
+                },
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        12,
+                        0,
+                        0
+                    ]
+                }
+            }
+        },
+        {
+            "data": {
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        6,
+                        26,
+                        48,
+                        30
+                    ]
+                },
+                "winner": null,
+                "team2": {
+                    "scores": [
+                        12,
+                        0,
+                        0,
+                        0
+                    ],
+                    "name": "صن و حكم"
+                }
+            },
+            "event": "score increased",
+            "startAt": 403448
+        },
+        {
+            "event": "score increased",
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        12,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "team1": {
+                    "scores": [
+                        6,
+                        26,
+                        48,
+                        30,
+                        26
+                    ],
+                    "name": "طويق"
+                },
+                "winner": null
+            },
+            "startAt": 454754
+        },
+        {
+            "data": {
+                "winner": null,
+                "team2": {
+                    "scores": [
+                        12,
+                        0,
+                        0,
+                        0,
+                        0,
+                        2
+                    ],
+                    "name": "صن و حكم"
+                },
+                "team1": {
+                    "scores": [
+                        6,
+                        26,
+                        48,
+                        30,
+                        26,
+                        14
+                    ],
+                    "name": "طويق"
+                }
+            },
+            "startAt": 551783,
+            "event": "score increased"
+        },
+        {
+            "startAt": 623760,
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        12,
+                        0,
+                        0,
+                        0,
+                        0,
+                        2,
+                        2
+                    ]
+                },
+                "team1": {
+                    "scores": [
+                        6,
+                        26,
+                        48,
+                        30,
+                        26,
+                        14,
+                        21
+                    ],
+                    "name": "طويق"
+                },
+                "winner": "team1"
+            },
+            "event": "score increased"
+        },
+        {
+            "startAt": 640451,
+            "event": "delete",
+            "data": {
+                "winner": null,
+                "team2": {
+                    "scores": [],
+                    "name": "صن و حكم"
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": []
+                }
+            }
+        },
+        {
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        14
+                    ]
+                },
+                "winner": null,
+                "team1": {
+                    "scores": [
+                        2
+                    ],
+                    "name": "طويق"
+                }
+            },
+            "startAt": 702793,
+            "event": "score increased"
+        },
+        {
+            "event": "score increased",
+            "startAt": 793479,
+            "data": {
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        2,
+                        16
+                    ]
+                },
+                "team2": {
+                    "scores": [
+                        14,
+                        18
+                    ],
+                    "name": "صن و حكم"
+                },
+                "winner": null
+            }
+        },
+        {
+            "startAt": 883003,
+            "data": {
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        2,
+                        16,
+                        0
+                    ]
+                },
+                "winner": null,
+                "team2": {
+                    "scores": [
+                        14,
+                        18,
+                        25
+                    ],
+                    "name": "صن و حكم"
+                }
+            },
+            "event": "score increased"
+        },
+        {
+            "event": "score increased",
+            "data": {
+                "team2": {
+                    "scores": [
+                        14,
+                        18,
+                        25,
+                        11
+                    ],
+                    "name": "صن و حكم"
+                },
+                "winner": null,
+                "team1": {
+                    "scores": [
+                        2,
+                        16,
+                        0,
+                        7
+                    ],
+                    "name": "طويق"
+                }
+            },
+            "startAt": 958060
+        },
+        {
+            "data": {
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        2,
+                        16,
+                        0,
+                        7,
+                        13
+                    ]
+                },
+                "winner": null,
+                "team2": {
+                    "scores": [
+                        14,
+                        18,
+                        25,
+                        11,
+                        3
+                    ],
+                    "name": "صن و حكم"
+                }
+            },
+            "startAt": 1027672,
+            "event": "score increased"
+        },
+        {
+            "event": "score increased",
+            "startAt": 1091193,
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        14,
+                        18,
+                        25,
+                        11,
+                        3,
+                        30
+                    ]
+                },
+                "team1": {
+                    "scores": [
+                        2,
+                        16,
+                        0,
+                        7,
+                        13,
+                        0
+                    ],
+                    "name": "طويق"
+                },
+                "winner": null
+            }
+        },
+        {
+            "event": "score increased",
+            "startAt": 1172009,
+            "data": {
+                "winner": null,
+                "team1": {
+                    "scores": [
+                        2,
+                        16,
+                        0,
+                        7,
+                        13,
+                        0,
+                        0
+                    ],
+                    "name": "طويق"
+                },
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        14,
+                        18,
+                        25,
+                        11,
+                        3,
+                        30,
+                        26
+                    ]
+                }
+            }
+        },
+        {
+            "event": "score increased",
+            "startAt": 1246954,
+            "data": {
+                "team2": {
+                    "scores": [
+                        14,
+                        18,
+                        25,
+                        11,
+                        3,
+                        30,
+                        26,
+                        14
+                    ],
+                    "name": "صن و حكم"
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        2,
+                        16,
+                        0,
+                        7,
+                        13,
+                        0,
+                        0,
+                        2
+                    ]
+                },
+                "winner": null
+            }
+        },
+        {
+            "event": "score increased",
+            "startAt": 1405443,
+            "data": {
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        2,
+                        16,
+                        0,
+                        7,
+                        13,
+                        0,
+                        0,
+                        2,
+                        0
+                    ]
+                },
+                "winner": "team2",
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        14,
+                        18,
+                        25,
+                        11,
+                        3,
+                        30,
+                        26,
+                        14,
+                        36
+                    ]
+                }
+            }
+        },
+        {
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": []
+                },
+                "winner": null,
+                "team1": {
+                    "name": "طويق",
+                    "scores": []
+                }
+            },
+            "startAt": 1423543,
+            "event": "delete"
+        },
+        {
+            "startAt": 1474424,
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        16
+                    ]
+                },
+                "winner": null,
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        24
+                    ]
+                }
+            },
+            "event": "score increased"
+        },
+        {
+            "startAt": 1566061,
+            "data": {
+                "team1": {
+                    "scores": [
+                        24,
+                        20
+                    ],
+                    "name": "طويق"
+                },
+                "team2": {
+                    "scores": [
+                        16,
+                        10
+                    ],
+                    "name": "صن و حكم"
+                },
+                "winner": null
+            },
+            "event": "score increased"
+        },
+        {
+            "startAt": 1684321,
+            "data": {
+                "team2": {
+                    "scores": [
+                        16,
+                        10,
+                        9
+                    ],
+                    "name": "صن و حكم"
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        24,
+                        20,
+                        11
+                    ]
+                },
+                "winner": null
+            },
+            "event": "score increased"
+        },
+        {
+            "event": "score increased",
+            "data": {
+                "team1": {
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22
+                    ],
+                    "name": "طويق"
+                },
+                "winner": null,
+                "team2": {
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8
+                    ],
+                    "name": "صن و حكم"
+                }
+            },
+            "startAt": 1755535
+        },
+        {
+            "event": "score increased",
+            "data": {
+                "team2": {
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2
+                    ],
+                    "name": "صن و حكم"
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14
+                    ]
+                },
+                "winner": null
+            },
+            "startAt": 1831009
+        },
+        {
+            "data": {
+                "winner": null,
+                "team2": {
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2,
+                        14
+                    ],
+                    "name": "صن و حكم"
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14,
+                        4
+                    ]
+                }
+            },
+            "startAt": 1929744,
+            "event": "score increased"
+        },
+        {
+            "event": "score increased",
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2,
+                        14,
+                        30
+                    ]
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14,
+                        4,
+                        0
+                    ]
+                },
+                "winner": null
+            },
+            "startAt": 2004967
+        },
+        {
+            "startAt": 2140579,
+            "data": {
+                "winner": null,
+                "team2": {
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2,
+                        14,
+                        30,
+                        0
+                    ],
+                    "name": "صن و حكم"
+                },
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14,
+                        4,
+                        0,
+                        25
+                    ]
+                }
+            },
+            "event": "score increased"
+        },
+        {
+            "startAt": 2196624,
+            "data": {
+                "team1": {
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14,
+                        4,
+                        0,
+                        25,
+                        0
+                    ],
+                    "name": "طويق"
+                },
+                "winner": null,
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2,
+                        14,
+                        30,
+                        0,
+                        18
+                    ]
+                }
+            },
+            "event": "score increased"
+        },
+        {
+            "data": {
+                "team2": {
+                    "name": "صن و حكم",
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2,
+                        14,
+                        30,
+                        0,
+                        18,
+                        2
+                    ]
+                },
+                "winner": null,
+                "team1": {
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14,
+                        4,
+                        0,
+                        25,
+                        0,
+                        24
+                    ],
+                    "name": "طويق"
+                }
+            },
+            "event": "score increased",
+            "startAt": 2277479
+        },
+        {
+            "startAt": 2533606,
+            "data": {
+                "team2": {
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2,
+                        14,
+                        30,
+                        0,
+                        18,
+                        2,
+                        4
+                    ],
+                    "name": "صن و حكم"
+                },
+                "winner": "team1",
+                "team1": {
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14,
+                        4,
+                        0,
+                        25,
+                        0,
+                        24,
+                        22
+                    ],
+                    "name": "طويق"
+                }
+            },
+            "event": "score increased"
+        },
+        {
+            "event": "end",
+            "data": {
+                "team1": {
+                    "name": "طويق",
+                    "scores": [
+                        24,
+                        20,
+                        11,
+                        22,
+                        14,
+                        4,
+                        0,
+                        25,
+                        0,
+                        24,
+                        22
+                    ]
+                },
+                "team2": {
+                    "scores": [
+                        16,
+                        10,
+                        9,
+                        8,
+                        2,
+                        14,
+                        30,
+                        0,
+                        18,
+                        2,
+                        4
+                    ],
+                    "name": "صن و حكم"
+                },
+                "winner": "team1"
+            },
+            "startAt": 2545747
+        }
+    ],
+    "createdAt": {
+        "seconds": 1679152111,
+        "nanoseconds": 802000000
+    },
+    "name": "(18‏/3‏/2023 6:08:31 م) - ( طويق ) ضد ( صن و حكم )"
+}
