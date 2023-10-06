@@ -30,6 +30,26 @@ const router = createRouter({
       component: () => import("@/views/HomeView.vue"),
     },
     {
+      path: "/top",
+      name: "top",
+      component: () => import("@/views/TopView.vue"),
+    },
+    {
+      path: "/bottom",
+      name: "bottom",
+      component: () => import("@/views/BottomView.vue"),
+    },
+    {
+      path: "/left",
+      name: "left",
+      component: () => import("@/views/LeftView.vue"),
+    },
+    {
+      path: "/right",
+      name: "right",
+      component: () => import("@/views/RightView.vue"),
+    },
+    {
       path: "/calc",
       name: "calc",
       component: () => import("@/views/CalculatorView.vue"),
