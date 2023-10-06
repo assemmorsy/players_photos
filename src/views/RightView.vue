@@ -51,6 +51,7 @@ onBeforeMount(async () => {
 #right-box {
     top: calc((var(--screen-height) / 2) - (var(--box-height) / 2));
     right: 0px;
+    transform: rotate(180deg);
 }
 
 #right-image {
