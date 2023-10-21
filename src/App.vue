@@ -10,9 +10,10 @@ import { RouterView } from "vue-router";
 :root {
   --screen-height: 2160px;
   --screen-width: 3840px;
-  --box-height: 287px;
-  --box-width: 287px;
-  --box-top-bottom-margin: 24px;
+  --box-height: 361px;
+  --box-width: 268px;
+  --box-top-bottom-margin: 60px;
+  --box-left-right-margin: 120px;
 
   --winner-box-size: 200px;
 
@@ -26,5 +27,11 @@ import { RouterView } from "vue-router";
   --detail-radius: 8.5rem;
   --detail-header-width: 30rem;
   --detail-header-height: 5rem;
+}
+
+body {
+
+  background-color: #0000 !important;
+  overflow: hidden !important;
 }
 </style>

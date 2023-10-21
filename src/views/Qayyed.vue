@@ -118,9 +118,8 @@
 
     <div class="row justify-content-center fixed-bottom mb-3">
       <div class="col col-2">
-        <button class="btn btn-warning qayyed rounded-circle" @click="handleBack" :disabled="
-          !(board.team1.scores.length > 0 && board.team2.scores.length > 0)
-        ">
+        <button class="btn btn-warning qayyed rounded-circle" @click="handleBack" :disabled="!(board.team1.scores.length > 0 && board.team2.scores.length > 0)
+          ">
           <i class="bi bi-skip-backward icon"></i>
         </button>
       </div>

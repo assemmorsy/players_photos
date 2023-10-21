@@ -3,13 +3,9 @@
     <div class="playerOne">
       <div id="playerOneElm" class="bg-dark bg-gradient">
         <div class="centerPlayerOne">
-          <p
-            v-if="
-              team1Name.length > NUMBER_OF_CHARS_TO_TRIGGER ||
-              team2Name.length > NUMBER_OF_CHARS_TO_TRIGGER
-            "
-            class=""
-          >
+          <p v-if="team1Name.length > NUMBER_OF_CHARS_TO_TRIGGER ||
+            team2Name.length > NUMBER_OF_CHARS_TO_TRIGGER
+            " class="">
             <template v-for="(t, index) in team1Name.split('|')" :key="index">
               <p class="pb-0">{{ t }}</p>
             </template>
@@ -33,13 +29,9 @@
       </div>
       <div id="playerTwoElm" class="bg-dark bg-gradient">
         <div class="centerPlayerTwo">
-          <p
-            v-if="
-              team1Name.length > NUMBER_OF_CHARS_TO_TRIGGER ||
-              team2Name.length > NUMBER_OF_CHARS_TO_TRIGGER
-            "
-            class=""
-          >
+          <p v-if="team1Name.length > NUMBER_OF_CHARS_TO_TRIGGER ||
+            team2Name.length > NUMBER_OF_CHARS_TO_TRIGGER
+            " class="">
             <template v-for="(t, index) in team2Name.split('|')" :key="index">
               <p class="pb-0">{{ t }}</p>
             </template>
@@ -166,12 +158,14 @@ export default {
 .hidden-dots {
   opacity: 0;
 }
+
 .score-style {
   color: aliceblue;
   width: 100vw;
   font-family: "CairoSemiBold";
   font-size: 2.4rem;
 }
+
 .playerOne,
 .playerTwo {
   position: fixed;
@@ -179,12 +173,15 @@ export default {
   height: var(--score-height);
   width: var(--score-width);
 }
+
 .playerOne {
-  right: var(--score-margin-x);
+  left: calc(50% + 5rem);
 }
+
 .playerTwo {
-  left: var(--score-margin-x);
+  right: calc(50% + 5rem);
 }
+
 #playerOneElm p,
 #playerTwoElm p {
   padding: 0 0 0.5rem 0;
@@ -205,6 +202,7 @@ export default {
   left: calc((var(--score-radius) / 2) - var(--score-overlap));
   border-radius: 0px 15px 50px 0px;
 }
+
 #playerTwoElm {
   position: absolute;
   right: calc((var(--score-radius) / 2) - var(--score-overlap));
@@ -225,9 +223,11 @@ export default {
   /* padding-top: 0.5rem; */
   line-height: 140%;
 }
+
 .centerPlayerOne {
   left: var(--score-overlap);
 }
+
 .centerPlayerTwo {
   right: var(--score-overlap);
 }
@@ -243,11 +243,13 @@ export default {
   align-items: center;
   z-index: 5;
 }
+
 #playerOneScoreElm {
   background: linear-gradient(45deg, #32b8f7, #193c73);
   left: -3.5rem;
   border-radius: 50px 15px;
 }
+
 #playerTwoScoreElm {
   background: linear-gradient(45deg, #f6b033, #e4342a);
   right: -3.5rem;

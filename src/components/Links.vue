@@ -28,6 +28,7 @@
 </template>
 
 <script setup>
+
 const LINKS = [{
     name: "الحاسبة", link: "https://players-photos.web.app/qayyed"
 
@@ -42,6 +43,18 @@ const LINKS = [{
 
 }, {
     name: "لوحة تحكم جدول الدوري واساسونا", link: "https://sam-baloot-admin.online/admin"
+}
+    , {
+    name: "رابط الكام اللي فوق", link: "https://players-photos.web.app/top"
+}
+    , {
+    name: "رابط الكام اللي يمين", link: "https://players-photos.web.app/right"
+}
+    , {
+    name: "رابط الكام اللي تحت", link: "https://players-photos.web.app/bottom"
+}
+    , {
+    name: "رابط الكام اللي يسار", link: "https://players-photos.web.app/left"
 }
 ]
 
