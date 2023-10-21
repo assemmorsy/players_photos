@@ -90,7 +90,8 @@ const filteredRecords = computed(() => {
         if (props.records[key].name.toLowerCase().includes(search.value.toLowerCase()))
             res.push(props.records[key])
     }
-    return res
+    res.sort((r1, r2) => (new Date(r2.createdAt.seconds * 1000)) - (new Date(r1.createdAt.seconds * 1000)))
+    return res;
 })
 const WiNNING_SCORE = 152;
 
