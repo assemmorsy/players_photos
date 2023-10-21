@@ -170,16 +170,17 @@ export default {
 .playerTwo {
   position: fixed;
   top: var(--score-margin);
+
   height: var(--score-height);
   width: var(--score-width);
 }
 
 .playerOne {
-  left: calc(50% + 5rem);
+  left: calc(50% + 2.5rem);
 }
 
 .playerTwo {
-  right: calc(50% + 5rem);
+  right: calc(50% + 4.6rem);
 }
 
 #playerOneElm p,
@@ -245,13 +246,16 @@ export default {
 }
 
 #playerOneScoreElm {
-  background: linear-gradient(45deg, #32b8f7, #193c73);
+  /* background: linear-gradient(45deg, #f2f3f3, #ed1c24); */
+  background-color: #000000;
   left: -3.5rem;
   border-radius: 50px 15px;
 }
 
 #playerTwoScoreElm {
-  background: linear-gradient(45deg, #f6b033, #e4342a);
+  /* background: linear-gradient(-45deg, #f2f3f3, #ed1c24); */
+  background-color: #ed1c24;
+
   right: -3.5rem;
   border-radius: 15px 50px;
 }

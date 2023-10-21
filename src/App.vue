@@ -18,7 +18,7 @@ import { RouterView } from "vue-router";
   --winner-box-size: 200px;
 
   --score-radius: 7rem;
-  --score-margin: 3.5rem;
+  --score-margin: 1.2rem;
   --score-height: 4.9rem;
   --score-width: 17rem;
   --score-overlap: 3rem;

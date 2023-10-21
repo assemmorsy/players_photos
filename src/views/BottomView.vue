@@ -71,7 +71,7 @@ onBeforeMount(async () => {
     height: var(--box-height);
     width: var(--box-width);
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 40px;
 }
 
 .top-wrapper {
