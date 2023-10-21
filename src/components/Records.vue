@@ -32,34 +32,39 @@
                 <input type="text" v-model="search" class="form-control d-inline-block" id="search" placeholder="كلمة البحث"
                     style="width: 70%" />
             </div>
-            <table v-if="filteredRecords.length > 0" class="table table-striped  mt-3" style="width: 98%">
-                <thead>
-                    <tr>
-                        <th scope="col">تاريخ التسجيل </th>
-                        <th scope="col">اسم التسجيل</th>
-                        <th scope="col">الادوات</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="rec in filteredRecords" :key="rec.id">
-                        <th scope="row">{{ (new Date(rec.createdAt.seconds * 1000)).toLocaleDateString() }}</th>
-                        <td>{{ rec.name }}</td>
-                        <td>
-                            <div v-if="rec.id !== board.record.id">
-                                <button class="btn btn-primary mx-1 p-1" @click.prevent="handleCopyRecord(rec.id)">
-                                    <i class=" bi bi-clipboard"></i>
-                                </button>
-                                <button class="btn btn-danger mx-1 p-1" @click.ctrl.prevent="handleDeleteRecord(rec.id)">
-                                    <i class="bi bi-trash3"></i>
-                                </button>
-                            </div>
-                            <div v-else>
-                                تحت التسجيل
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+
+                <table v-if="filteredRecords.length > 0" class="table table-striped   mt-3" style="width: 98% ;">
+                    <thead>
+                        <tr>
+                            <th scope="col">تاريخ التسجيل </th>
+                            <th scope="col">اسم التسجيل</th>
+                            <th scope="col">الادوات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="rec in filteredRecords" :key="rec.id">
+                            <th scope="row">{{ (new Date(rec.createdAt.seconds * 1000)).toLocaleDateString() }}</th>
+                            <td>{{ rec.name }}</td>
+                            <td>
+                                <div v-if="rec.id !== board.record.id">
+                                    <button class="btn btn-primary mx-1 p-1" @click.prevent="handleCopyRecord(rec.id)">
+                                        <i class=" bi bi-clipboard"></i>
+                                    </button>
+                                    <button class="btn btn-danger mx-1 p-1"
+                                        @click.ctrl.prevent="handleDeleteRecord(rec.id)">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
+                                <div v-else>
+                                    تحت التسجيل
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 </template>
@@ -221,4 +226,10 @@ const handleCopyRecord = (id) => {
 
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped>
+.table-wrapper {
+    height: 25rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+</style>
