@@ -55,11 +55,7 @@ const router = createRouter({
       name: "right",
       component: () => import("@/views/players-photos/RightView.vue"),
     },
-    {
-      path: "/calc",
-      name: "calc",
-      component: () => import("@/views/CalculatorView.vue"),
-    },
+
     {
       path: "/qayyed",
       name: "qayyed",
