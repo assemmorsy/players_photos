@@ -27,7 +27,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => import("@/views/HomeView.vue"),
+      component: () => import("@/views/players-photos/HomeView.vue"),
     },
     {
       path: "/nashra",
@@ -37,23 +37,23 @@ const router = createRouter({
     {
       path: "/top",
       name: "top",
-      component: () => import("@/views/TopView.vue"),
+      component: () => import("@/views/players-photos/TopView.vue"),
     },
 
     {
       path: "/bottom",
       name: "bottom",
-      component: () => import("@/views/BottomView.vue"),
+      component: () => import("@/views/players-photos/BottomView.vue"),
     },
     {
       path: "/left",
       name: "left",
-      component: () => import("@/views/LeftView.vue"),
+      component: () => import("@/views/players-photos/LeftView.vue"),
     },
     {
       path: "/right",
       name: "right",
-      component: () => import("@/views/RightView.vue"),
+      component: () => import("@/views/players-photos/RightView.vue"),
     },
     {
       path: "/calc",
