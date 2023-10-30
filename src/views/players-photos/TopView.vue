@@ -30,14 +30,13 @@
 </template>
   
 <script setup>
-import { ref, watch } from "vue";
 import { Preview } from "vue-advanced-cropper";
 import { onBeforeMount } from "vue";
 import getDocument from "@/composables/getDocument";
 import getCollection from "@/composables/getCollectionAsDictionary";
 
-const { error: boardError, doc: board, getDoc } = getDocument("board");
-const { error: loadingPlayersError, documents: players } =
+const { doc: board, getDoc } = getDocument("board");
+const { documents: players } =
     getCollection("players");
 const ENV = "prod";
 

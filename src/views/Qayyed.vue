@@ -5,55 +5,54 @@
                   justify-content-around
                   pt-4
                   text-center
-                  bg-success
+                  bg-slate
                   position-relative
                 ">
       <div class="
-                    mb-3
                     col col-6
                     d-flex
                     flex-column
                     align-items-center
                     justify-content-end
                   ">
-        <p type="text" class="
+        <p class="   m-0
                       form-control
                       border-0 border-bottom
-                      bg-success
+                      bg-slate
                       text-light
                       border-light
                     ">
           {{ teamsNames.team1 }}
         </p>
-        <p class="total text-light fs-1">
+        <p class="total text-light ">
           {{ total.team1 }}
         </p>
       </div>
 
       <div class="
-                    mb-3
                     col col-6
                     d-flex
                     flex-column
                     align-items-center
                     justify-content-end
                   ">
-        <p type="text" class="
+        <p class="  m-0
                       form-control
                       border-0 border-bottom
-                      bg-success
+                      bg-slate
                       text-light
                       border-light
                     ">
           {{ teamsNames.team2 }}
         </p>
-        <p class="total text-light fs-1">
+        <p class="total text-light">
           {{ total.team2 }}
         </p>
       </div>
 
       <div class="position-absolute top-100 start-50 translate-middle">
-        <button class="btn btn-success qayyed border rounded-circle border-3" @click="handleQayyed">
+        <!-- border rounded-circle border-3 -->
+        <button class="btn btn-secondary  qayyed-btn qayyed " @click="handleQayyed">
           <i class="bi bi-send icon"></i>
         </button>
       </div>
@@ -95,11 +94,12 @@
       {{ qayyedError }}
     </div>
 
-    <div class="row justify-content-around text-center mt-2" style="overflow-y: auto; height: 50vh">
+    <div class="row justify-content-around py-3 text-center mt-2"
+      style="overflow-y: auto; height: 50vh ;background-color: #eee;">
       <div class="mb-3 col col-5 justify-content-center">
         <div class="row justify-content-center">
           <transition-group name="scores" appear>
-            <p v-for="(score, index) in board.team1.scores" :key="index">
+            <p class="fs-4 border-bottom border-1" v-for="(score, index) in board.team1.scores" :key="index">
               {{ score }}
             </p>
           </transition-group>
@@ -108,7 +108,7 @@
       <div class="mb-3 col col-5 justify-content-center">
         <div class="row justify-content-center">
           <transition-group name="scores" appear>
-            <p v-for="(score, index) in board.team2.scores" :key="index">
+            <p class="fs-4 border-bottom border-1 " v-for="(score, index) in board.team2.scores" :key="index">
               {{ score }}
             </p>
           </transition-group>
@@ -118,24 +118,24 @@
 
     <div class="row justify-content-center fixed-bottom mb-3">
       <div class="col col-2">
-        <button class="btn btn-warning qayyed rounded-circle" @click="handleBack" :disabled="!(board.team1.scores.length > 0 && board.team2.scores.length > 0)
+        <button class="btn btn-warning qayyed-btn  rounded-circle" @click="handleBack" :disabled="!(board.team1.scores.length > 0 && board.team2.scores.length > 0)
           ">
           <i class="bi bi-skip-backward icon"></i>
         </button>
       </div>
 
       <div class="col col-2">
-        <button class="btn btn-danger qayyed rounded-circle" @click="handleDeleteAll"
+        <button class="btn btn-danger qayyed-btn rounded-circle" @click="handleDeleteAll"
           v-if="winner && !board.animationRunning">
           <i class="bi bi-trash3 icon"></i>
         </button>
       </div>
 
       <div class="col col-2">
-        <button class="btn btn-primary qayyed rounded-circle" v-if="!logoutLoading" @click="handleLogout">
+        <button class="btn btn-primary qayyed-btn rounded-circle" v-if="!logoutLoading" @click="handleLogout">
           <i class="bi bi-door-closed icon"></i>
         </button>
-        <button class="btn btn-primary qayyed rounded-circle" disabled v-else>
+        <button class="btn btn-primary qayyed-btn rounded-circle" disabled v-else>
           <div class="spinner-border text-secondary" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
@@ -168,21 +168,19 @@ const { error: loadingRecordsError, documents: records } =
 
 const { error: errorRecord, isPending: isPendingRecord, deleteDoc: deleteRecord, updateDoc: updateRecord } = useDocument("records");
 const { error, isPending, deleteDoc, updateDoc } = useDocument("board");
+const { error: logoutError, loading: logoutLoading, logout } = useLogout();
+const router = useRouter();
+
 const ENV = "prod";
 const WiNNING_SCORE = 152;
-
-onBeforeMount(async () => {
-  await getDoc(ENV);
-});
-
-const router = useRouter();
-const { error: logoutError, loading: logoutLoading, logout } = useLogout();
 const qayyedError = ref(null);
 
 const tempScores = ref({
   team1: "",
   team2: "",
 });
+
+
 
 const total = computed(() => {
   if (board.value) {
@@ -253,6 +251,10 @@ const handleLogout = async () => {
   if (!logoutError.value) router.push({ name: "login" });
 };
 
+onBeforeMount(async () => {
+  await getDoc(ENV);
+});
+
 const handleDeleteAll = async () => {
   board.value.team1.scores = [];
   board.value.team2.scores = [];
@@ -305,7 +307,7 @@ const validateNumber = (event) => {
   const Numbers = "0123456789".split("");
   if (
     Numbers.includes(event.key) &&
-    tempScores.value[event.target.id].length < 3
+    tempScores.value[event.target.id].length < 2
   ) {
     ["0", "", "-"].includes(tempScores.value[event.target.id])
       ? (tempScores.value[event.target.id] = event.key)
@@ -342,15 +344,34 @@ const handleQayyed = async () => {
 </script>
 
 <style scoped>
-.qayyed {
+.qayyed-btn {
   width: 60px;
   height: 60px;
+
+}
+
+.qayyed {
+  background-color: #1e293b;
+  color: white;
+  border-color: #ec1c24;
+  border-radius: 50%;
+  border-width: 3px;
+}
+
+.total {
+  font-size: 5rem;
+  padding: 0;
+  margin: 0;
 }
 
 .line {
   background-color: black;
   height: 50vh;
   width: 1px;
+}
+
+.bg-slate {
+  background-color: #1e293b;
 }
 
 .icon {

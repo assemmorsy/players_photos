@@ -29,12 +29,17 @@ const router = createRouter({
       name: "home",
       component: () => import("@/views/HomeView.vue"),
     },
-
+    {
+      path: "/nashra",
+      name: "Nashra",
+      component: () => import("@/views/NashraView.vue"),
+    },
     {
       path: "/top",
       name: "top",
       component: () => import("@/views/TopView.vue"),
     },
+
     {
       path: "/bottom",
       name: "bottom",
