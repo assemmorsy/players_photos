@@ -39,7 +39,7 @@ const LINKS = [{
     name: " شاشة عرض الصور", link: "https://players-photos.web.app/"
 
 }, {
-    name: "النشرة", link: "https://players-photos.web.app/calc"
+    name: "النشرة", link: "https://players-photos.web.app/nashra"
 
 }, {
     name: "لوحة تحكم جدول الدوري واساسونا", link: "https://sam-baloot-admin.online/admin"
