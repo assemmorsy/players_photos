@@ -87,6 +87,7 @@ export const useNashraStore = defineStore('Nashra', () => {
             }
         });
     }
+    
     const SendAnimationEndedSignal = () => {
         send("ANIMATION_ENDED", {
             endAnimate: async () => {

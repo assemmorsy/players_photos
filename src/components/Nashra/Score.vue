@@ -1,6 +1,7 @@
 <template>
     <div class="score-comp">
-        <video ref="mediaElm" class="video-elm" muted src="/videos/Corner_Score.webm" height="1080" width="1920"></video>
+        <video ref="mediaElm" class="video-elm" @timeupdate="handleTimeUpdate" @ended="handleVideoEnd" muted
+            src="/videos/Corner_Score.webm" height="1080" width="1920"></video>
         <div id="team1wrapper" ref="team1wrapper">
             <preview id="rightSponsor" class="imageContainer" :image="matchData.team1.sponsorLogo.image"
                 :coordinates="matchData.team1.sponsorLogo.coordinates" />
@@ -47,27 +48,28 @@ const tweenedScores = reactive({
 });
 watch(
     () => [matchData.value.team1.totalScore, matchData.value.team2.totalScore],
-    () => {
-        gsap.to(tweenedScores, {
-            team1: matchData.value.team1.totalScore,
-            team2: matchData.value.team2.totalScore,
-            duration: 0.75,
-        });
+    (newVal, oldVal) => {
+        if (newVal[0] < oldVal[0] || newVal[1] < oldVal[1])
+            gsap.to(tweenedScores, {
+                team1: matchData.value.team1.totalScore,
+                team2: matchData.value.team2.totalScore,
+                duration: 0.75,
+            });
     }
 );
 
 const scoreMount = () => {
     const t1 = gsap.timeline();
-    t1.delay(2);
+    t1.delay(1.75);
     t1.to([team1wrapper.value, team2wrapper.value], {
-        duration: 1,
+        duration: 0.75,
         opacity: 1,
         ease: "bounce.out",
     });
     t1.to(tweenedScores, {
         team1: matchData.value.team1.totalScore,
         team2: matchData.value.team2.totalScore,
-        duration: 0.75,
+        duration: 0.5,
         ease: 'linear'
     });
 
@@ -75,41 +77,46 @@ const scoreMount = () => {
 
 const scoreUnMount = () => {
     const t2 = gsap.timeline();
-
     t2.to([team1wrapper.value, team2wrapper.value], {
-        duration: 1.5,
+        duration: 1.2,
         y: -80,
+        opacity: 0,
         ease: "circ.in",
     });
 };
 
+const handleVideoEnd = () => {
+    console.log(`video ended at current time : ${mediaElm.value.currentTime}`);
+    NashraStore.SendAnimationEndedSignal();
+}
 
+const handleTimeUpdate = (() => {
+    let done = false;
+    return () => {
+        if (mediaElm.value.currentTime >= 3 && !done) {
+            mediaElm.value.pause();
+            NashraStore.SendAnimationEndedSignal();
+            done = true;
+            console.log(` current time is reach ${mediaElm.value.currentTime} and Done function : ${done}`);
+        }
+    }
+})();
 
 const startEnterAnimation = () => {
     console.log("from startEnterAnimation ");
-
     onMounted(() => {
         mediaElm.value.play();
         scoreMount();
-        setTimeout(() => {
-            mediaElm.value.pause();
-            NashraStore.SendAnimationEndedSignal();
-        }, 3100)
     })
 }
 
 const startLeaveAnimation = () => {
-    console.log("from startLeaveAnimation ");
+    console.log("from startLeaveAnimation");
     mediaElm.value.play();
     scoreUnMount();
-    setTimeout(() => {
-        // mediaElm.value.pause();
-        NashraStore.SendAnimationEndedSignal();
-    }, 1500)
 }
 
 watchEffect(() => {
-    console.log(currentStateNames.value[1]);
     switch (currentStateNames.value[1]) {
         case "score.enterScoreAnimation":
             startEnterAnimation();
@@ -124,7 +131,6 @@ watchEffect(() => {
 </script>
 
 <style scoped>
-
 /* .score-comp{} */
 
 .video-elm {

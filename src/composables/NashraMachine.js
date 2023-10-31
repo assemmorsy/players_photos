@@ -51,8 +51,7 @@ export const NashraMachine = createMachine({
                         DETAILED_SCORE_DELAY: {
                             target: "leaveDetailedScoreAnimation"
                         }
-                    }
-                   
+                    },
                 },
                 leaveDetailedScoreAnimation: {
                     on: {
@@ -96,7 +95,7 @@ export const NashraMachine = createMachine({
     }
 }, {
     delays: {
-        DETAILED_SCORE_DELAY: 3000,
+        DETAILED_SCORE_DELAY: 1000,
         WINNING_DELAY: 1000,
     },
     guards: {
