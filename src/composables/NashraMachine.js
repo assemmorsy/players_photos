@@ -55,11 +55,13 @@ export const NashraMachine = createMachine({
                 },
                 leaveDetailedScoreAnimation: {
                     on: {
-                        ANIMATION_ENDED: [{
-                            target: "#NashraMachine.winning", cond: 'winnerCond'
-                        }, {
-                            target: "#NashraMachine.score"
-                        }]
+                        ANIMATION_ENDED: [
+                            // {
+                            //     target: "#NashraMachine.winning", cond: 'winnerCond'
+                            // },
+                            {
+                                target: "#NashraMachine.score"
+                            }]
                     }
                 }
             }

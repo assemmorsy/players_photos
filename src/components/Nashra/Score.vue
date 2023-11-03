@@ -78,7 +78,7 @@ const scoreMount = () => {
 const scoreUnMount = () => {
     const t2 = gsap.timeline();
     t2.to([team1wrapper.value, team2wrapper.value], {
-        duration: 1.2,
+        duration: 0.6,
         y: -80,
         opacity: 0,
         ease: "circ.in",
@@ -112,7 +112,9 @@ const startEnterAnimation = () => {
 
 const startLeaveAnimation = () => {
     console.log("from startLeaveAnimation");
+    mediaElm.value.playbackRate = 2.0
     mediaElm.value.play();
+
     scoreUnMount();
 }
 

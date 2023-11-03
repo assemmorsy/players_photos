@@ -1,5 +1,5 @@
 <template>
-    <div v-if="NashraStore.IsDataProvided" class="position-relative text-center h-100 w-100">
+    <div v-if="NashraStore.IsDataProvided" id="nashra-comp" class="position-relative text-center h-100 w-100">
         <component :is="COMPS[NashraStore.currentStateNames[0]]"></component>
     </div>
 </template>
@@ -25,5 +25,9 @@ onBeforeMount(async () => {
 })
 </script>
   
-<style scoped></style>
+<style scoped>
+#nashra-comp {
+    background-color: darkcyan;
+}
+</style>
   

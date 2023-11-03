@@ -118,6 +118,7 @@ const startEnterAnimation = () => {
 
 const startLeaveAnimation = () => {
     console.log("from startLeaveAnimation ");
+    mediaElm.value.playbackRate = 1.5
     mediaElm.value.play();
     scoreUnMount();
 }
