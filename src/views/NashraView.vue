@@ -11,7 +11,6 @@ import { onBeforeMount } from "vue"
 import Score from "@/components/Nashra/Score.vue";
 import DetailedScore from "@/components/Nashra/DetailedScore.vue";
 import Winning from "@/components/Nashra/WinnerView.vue";
-console.log("from nashra view");
 const COMPS = {
     score: Score,
     detailedScore: DetailedScore,
@@ -26,8 +25,8 @@ onBeforeMount(async () => {
 </script>
   
 <style scoped>
-#nashra-comp {
+/* #nashra-comp {
     background-color: darkcyan;
-}
+} */
 </style>
   

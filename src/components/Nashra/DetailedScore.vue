@@ -39,7 +39,6 @@ import { onMounted, ref, watchEffect, reactive, watch } from "vue"
 import { useNashraStore } from "@/stores/NashraStore.js"
 import { storeToRefs } from 'pinia'
 
-console.log("from detailed view");
 const NashraStore = useNashraStore();
 const { currentStateNames, matchData } = storeToRefs(NashraStore);
 
@@ -55,10 +54,11 @@ const tweenedScores = reactive({
 watch(
     () => [matchData.value.team1.totalScore, matchData.value.team2.totalScore],
     () => {
+        console.log("change in score");
         gsap.to(tweenedScores, {
             team1: matchData.value.team1.totalScore,
             team2: matchData.value.team2.totalScore,
-            duration: 0.75,
+            duration: 0.5,
         });
     }
 );
@@ -92,24 +92,21 @@ const scoreUnMount = () => {
 
 
 const handleVideoEnd = () => {
-    console.log(`video ended at current time : ${mediaElm.value.currentTime}`);
     NashraStore.SendAnimationEndedSignal();
 }
 
 const handleTimeUpdate = (() => {
     let done = false;
     return () => {
-        if (mediaElm.value.currentTime >= 3 && !done) {
+        if (mediaElm.value && mediaElm.value.currentTime >= 3 && !done) {
             mediaElm.value.pause();
             NashraStore.SendAnimationEndedSignal();
             done = true;
-            console.log(` current time is reach ${mediaElm.value.currentTime} and Done function : ${done}`);
         }
     }
 })();
 
 const startEnterAnimation = () => {
-    console.log("from startEnterAnimation ");
     onMounted(() => {
         mediaElm.value.play();
         scoreMount();
@@ -117,14 +114,14 @@ const startEnterAnimation = () => {
 }
 
 const startLeaveAnimation = () => {
-    console.log("from startLeaveAnimation ");
     mediaElm.value.playbackRate = 1.5
     mediaElm.value.play();
     scoreUnMount();
 }
+let timeoutId;
+
 
 watchEffect(() => {
-    console.log(currentStateNames.value[1]);
     switch (currentStateNames.value[1]) {
         case "detailedScore.enterDetailedScoreAnimation":
             startEnterAnimation();
@@ -147,6 +144,7 @@ watchEffect(() => {
     top: 0;
     left: 0;
     z-index: -1;
+    background-color: aquamarine;
 }
 
 #team1wrapper,

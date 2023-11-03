@@ -52,6 +52,11 @@ export const NashraMachine = createMachine({
                             target: "leaveDetailedScoreAnimation"
                         }
                     },
+                    on: {
+                        SCORE_INCREASED: {
+                            target: "detailedScoreComp", internal: false
+                        }
+                    },
                 },
                 leaveDetailedScoreAnimation: {
                     on: {
@@ -97,14 +102,14 @@ export const NashraMachine = createMachine({
     }
 }, {
     delays: {
-        DETAILED_SCORE_DELAY: 1000,
+        DETAILED_SCORE_DELAY: 1500,
         WINNING_DELAY: 1000,
     },
-    guards: {
-        winnerCond: (ctx, event) => {
-            return event.winner
-        }
-    },
+    // guards: {
+    //     winnerCond: (ctx, event) => {
+    //         return event.winner
+    //     }
+    // },
     actions: {
         updateAnimationStateToStart: async (ctx, event) => {
             await event.startAnimate();

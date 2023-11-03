@@ -32,7 +32,6 @@ import { onMounted, ref, watchEffect, reactive, watch } from "vue"
 import { useNashraStore } from "@/stores/NashraStore.js"
 import { storeToRefs } from 'pinia'
 
-console.log("from score view");
 const NashraStore = useNashraStore();
 const { currentStateNames, matchData } = storeToRefs(NashraStore);
 
@@ -86,7 +85,6 @@ const scoreUnMount = () => {
 };
 
 const handleVideoEnd = () => {
-    console.log(`video ended at current time : ${mediaElm.value.currentTime}`);
     NashraStore.SendAnimationEndedSignal();
 }
 
@@ -97,13 +95,11 @@ const handleTimeUpdate = (() => {
             mediaElm.value.pause();
             NashraStore.SendAnimationEndedSignal();
             done = true;
-            console.log(` current time is reach ${mediaElm.value.currentTime} and Done function : ${done}`);
         }
     }
 })();
 
 const startEnterAnimation = () => {
-    console.log("from startEnterAnimation ");
     onMounted(() => {
         mediaElm.value.play();
         scoreMount();
@@ -111,7 +107,6 @@ const startEnterAnimation = () => {
 }
 
 const startLeaveAnimation = () => {
-    console.log("from startLeaveAnimation");
     mediaElm.value.playbackRate = 2.0
     mediaElm.value.play();
 
