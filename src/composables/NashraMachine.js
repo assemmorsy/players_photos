@@ -61,9 +61,9 @@ export const NashraMachine = createMachine({
                 leaveDetailedScoreAnimation: {
                     on: {
                         ANIMATION_ENDED: [
-                            // {
-                            //     target: "#NashraMachine.winning", cond: 'winnerCond'
-                            // },
+                            {
+                                target: "#NashraMachine.winning", cond: 'winnerCond'
+                            },
                             {
                                 target: "#NashraMachine.score"
                             }]
@@ -73,29 +73,9 @@ export const NashraMachine = createMachine({
         },
 
         winning: {
-            id: "winningMachine",
-            initial: "enterWinningAnimation",
-            states: {
-                enterWinningAnimation: {
-                    on: {
-                        ANIMATION_ENDED: {
-                            target: "winningComp"
-                        }
-                    }
-                },
-                winningComp: {
-                    after: {
-                        WINNING_DELAY: {
-                            target: "leaveWinningAnimation"
-                        }
-                    }
-                },
-                leaveWinningAnimation: {
-                    on: {
-                        ANIMATION_ENDED: {
-                            target: "#NashraMachine.score"
-                        }
-                    }
+            on: {
+                ANIMATION_ENDED: {
+                    target: "#NashraMachine.score"
                 }
             }
         }
@@ -105,11 +85,11 @@ export const NashraMachine = createMachine({
         DETAILED_SCORE_DELAY: 1500,
         WINNING_DELAY: 1000,
     },
-    // guards: {
-    //     winnerCond: (ctx, event) => {
-    //         return event.winner
-    //     }
-    // },
+    guards: {
+        winnerCond: (ctx, event) => {
+            return event.winner
+        }
+    },
     actions: {
         updateAnimationStateToStart: async (ctx, event) => {
             await event.startAnimate();

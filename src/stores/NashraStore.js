@@ -50,14 +50,19 @@ export const useNashraStore = defineStore('Nashra', () => {
                 scores: team1Scores,
                 totalScore: team1TotalScore,
                 sponsorLogo: sponcers.value[board.value.team1.sponcer],
+                player1: players.value[board.value.team1.top],
+                player2: players.value[board.value.team1.bottom]
+
             },
             team2: {
                 name: names.team2,
                 scores: team2Scores,
                 totalScore: team2TotalScore,
                 sponsorLogo: sponcers.value[board.value.team2.sponcer],
+                player1: players.value[board.value.team2.right],
+                player2: players.value[board.value.team2.left]
             },
-            winner
+            winner: winner
         }
     })
 
@@ -87,7 +92,7 @@ export const useNashraStore = defineStore('Nashra', () => {
             }
         });
     }
-    
+
     const SendAnimationEndedSignal = () => {
         send("ANIMATION_ENDED", {
             endAnimate: async () => {
@@ -97,5 +102,5 @@ export const useNashraStore = defineStore('Nashra', () => {
         })
     }
 
-    return { IsDataProvided, currentStateNames: computed(() => state.value.toStrings()), startDataFetching, matchData, SendAnimationEndedSignal };
+    return { IsDataProvided, winnerText: computed(() => board.value ? board.value.winnerText : null), currentStateNames: computed(() => state.value.toStrings()), startDataFetching, matchData, SendAnimationEndedSignal };
 }) 

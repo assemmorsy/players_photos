@@ -144,7 +144,7 @@ watchEffect(() => {
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 #team1wrapper,
