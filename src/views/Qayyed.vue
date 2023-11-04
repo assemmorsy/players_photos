@@ -63,7 +63,7 @@
         <div class="row justify-content-center">
           <div class="col col-6">
             <input type="tel" class="form-control border-0 shadow p-2" v-model="tempScores.team1" id="team1"
-              @keypress.prevent="validateNumber" />
+              ref="team1Input" @keypress.prevent="validateNumber" />
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
         <div class="row justify-content-center">
           <div class="col col-6">
             <input type="tel" class="form-control border-0 shadow p-2" v-model="tempScores.team2" id="team2"
-              @keypress.prevent="validateNumber" />
+              ref="team2Input" @keypress.prevent="validateNumber" />
           </div>
         </div>
       </div>
@@ -181,6 +181,8 @@ const tempScores = ref({
 });
 
 
+const team1Input = ref(null);
+const team2Input = ref(null);
 
 const total = computed(() => {
   if (board.value) {
@@ -307,11 +309,23 @@ const validateNumber = (event) => {
   const Numbers = "0123456789".split("");
   if (
     Numbers.includes(event.key) &&
-    tempScores.value[event.target.id].length < 2
+    tempScores.value[event.target.id].length < 3
   ) {
     ["0", "", "-"].includes(tempScores.value[event.target.id])
       ? (tempScores.value[event.target.id] = event.key)
       : (tempScores.value[event.target.id] += event.key);
+  }
+  if (tempScores.value[event.target.id].length >= 2) {
+    switch (event.target.id) {
+      case "team1":
+        team2Input.value.focus();
+        break;
+      case "team2":
+        team1Input.value.focus();
+
+        break;
+
+    }
   }
 };
 

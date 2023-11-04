@@ -10,14 +10,14 @@
                 {{ matchData.team1.name }}
             </p>
 
-            <p id="team1totalScore">{{ tweenedScores.team1.toFixed(0) }}</p>
+            <p id="team1totalScore">{{ matchData.team1.totalScore }}</p>
             <div id="team1-detailed-scores">
                 <p class="score" v-for="s in  matchData.team1.scores">{{ s }}</p>
             </div>
         </div>
 
         <div id="team2wrapper" ref="team2wrapper">
-            <p id="team2totalScore">{{ tweenedScores.team2.toFixed(0) }}</p>
+            <p id="team2totalScore">{{ matchData.team2.totalScore }}</p>
 
             <p id="team2name">
                 {{ matchData.team2.name }}
@@ -47,46 +47,22 @@ const team1wrapper = ref(null);
 const team2wrapper = ref(null);
 
 
-const tweenedScores = reactive({
-    team1: 0,
-    team2: 0,
-});
-watch(
-    () => [matchData.value.team1.totalScore, matchData.value.team2.totalScore],
-    () => {
-        console.log("change in score");
-        gsap.to(tweenedScores, {
-            team1: matchData.value.team1.totalScore,
-            team2: matchData.value.team2.totalScore,
-            duration: 0.5,
-        });
-    }
-);
-
 const scoreMount = () => {
     const t1 = gsap.timeline();
     t1.delay(1.75);
     t1.to([team1wrapper.value, team2wrapper.value], {
         duration: 0.75,
         opacity: 1,
-        ease: "bounce.out",
+        ease: "linear",
     });
-    t1.to(tweenedScores, {
-        team1: matchData.value.team1.totalScore,
-        team2: matchData.value.team2.totalScore,
-        duration: 0.5,
-        ease: 'linear'
-    });
-
 };
 
 const scoreUnMount = () => {
     const t2 = gsap.timeline();
-
     t2.to([team1wrapper.value, team2wrapper.value], {
         duration: 1,
         opacity: 0,
-        ease: "bounce.out",
+        ease: "linear",
     });
 };
 
