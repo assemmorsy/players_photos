@@ -13,7 +13,7 @@ import { RouterView } from "vue-router";
   --box-height: 361px;
   --box-width: 268px;
   --box-top-bottom-margin: 60px;
-  --box-left-right-margin: 120px;
+  --box-left-right-margin: 305px;
 
   --winner-box-size: 200px;
 

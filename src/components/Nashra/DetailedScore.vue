@@ -94,7 +94,6 @@ const startLeaveAnimation = () => {
     mediaElm.value.play();
     scoreUnMount();
 }
-let timeoutId;
 
 
 watchEffect(() => {
@@ -174,11 +173,10 @@ watchEffect(() => {
 #team2totalScore {
     position: absolute;
     font-family: "CairoSemiBold";
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     top: 0px;
     width: 85px;
     height: 97px;
-    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,5 +221,13 @@ watchEffect(() => {
 
 #team2-detailed-scores {
     right: 0px;
+}
+
+.score {
+    font-weight: 800;
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+    line-height: 3rem;
 }
 </style>
